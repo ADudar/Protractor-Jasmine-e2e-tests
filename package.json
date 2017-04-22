@@ -1,0 +1,23 @@
+{
+  "name": "test_task",
+  "version": "1.0.0",
+  "description": "tesk task tag manager",
+  "main": "protractor.conf.js",
+  "scripts": {
+    "test": "protractor protractor.conf.js",
+    "server": "webdriver-manager start",
+    "server-update": "webdriver-manager update"
+  },
+  "keywords": [
+    "protractor",
+    "jasmine",
+    "js"
+  ],
+  "author": "Artsem Dudar",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.47",
+    "@types/protractor": "^4.0.0",
+    "jasmine-spec-reporter": "^4.0.0",
+    "jasmine2-custom-message": "^0.8.2"
+  }
+}
