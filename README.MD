@@ -1,14 +1,14 @@
-install protracotr globally:
+установить protractor глобально:
 npm i -g protractor
 
-install npm packages:
-npm install
+установить npm пакеты:
+npm i
 
-run server-update
-npm run server-update OR webdriver-manager update
+запустить обновление сервера
+npm run server-update ИЛИ webdriver-manager update
 
-run server:
-npm run test OR webdriver-manager start
+запустить сервер:
+npm run server ИЛИ webdriver-manager start
 
-run tests:
-npm run test OR protractor protractor.conf.js
+запустить тесты:
+npm run test ИЛИ protractor protractor.conf.js

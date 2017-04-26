@@ -9,11 +9,12 @@ exports.config = {
     },
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 10000,
+        defaultTimeoutInterval: 30000,
         print: function () {}
     },
 
     onPrepare: function () {
+        require('jasmine2-custom-message');
         jasmine.getEnv().addReporter(new SpecReporter({
             suite: {
                 displayNumber: true
@@ -28,8 +29,7 @@ exports.config = {
             }
         }));
         browser.ignoreSynchronization = true;
-        browser.driver.manage().timeouts().implicitlyWait(10000);
+        browser.driver.manage().timeouts().implicitlyWait(15000);
         browser.driver.manage().window().maximize();
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     }
 };

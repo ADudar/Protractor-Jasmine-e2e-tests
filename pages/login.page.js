@@ -10,12 +10,13 @@ var LoginPage = function () {
     var signInButton = element(by.id('signIn'));
 
     this.login = function (email, password) {
-        emailInput.sendKeys(email);
-        nextButton.click();
         var EC = protractor.ExpectedConditions;
+        emailInput.clear().sendKeys(email);
+        nextButton.click();
         browser.wait(EC.visibilityOf(passwordInput));
-        passwordInput.sendKeys(password);
+        passwordInput.clear().sendKeys(password);
         signInButton.click();
+        browser.sleep(3000);
     };
 };
 

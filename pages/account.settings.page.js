@@ -4,16 +4,12 @@
 
 var AccountSettings = function () {
 
-    var accountNameInput = element(by.css('input[name="form.account.data.name"]'));
+    var accountNameInput = element(by.name('form.account.data.name'));
     var anonymousDataCheckbox = element(by.model('ctrl.form.account.data.shareData'));
-    var nextStepButton = element(by.css('button[data-ng-click="stepperCtrl.nextStep()"]'));
+    var nextStepButton = element(by.css('[data-ng-click="stepperCtrl.nextStep()"]'));
 
     this.setAccountNameText = function (value) {
         accountNameInput.clear().sendKeys(value);
-    };
-
-    this.clickSendAnonymousDataCheckbox = function () {
-        sendAnonymousDataCheckbox.click();
     };
 
     this.clickNextStepButton = function () {
@@ -32,13 +28,8 @@ var AccountSettings = function () {
         anonymousDataCheckbox.click();
     };
 
-    this.checkIsanonymousDataCheckboxSelected = function () {
-        return anonymousDataCheckbox.getAttribute('class')
-            .then(function (cls) { return  cls.indexOf('material-checked') !== -1})
-    };
-
-    this.clickNextStepButton = function () {
-        nextStepButton.click();
+    this.expectAnonymousDataCheckboxSelected = function () {
+        expect(anonymousDataCheckbox.getAttribute('class')).toMatch('material-checked');
     };
 };
 

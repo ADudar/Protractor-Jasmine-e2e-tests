@@ -5,19 +5,24 @@
   "main": "protractor.conf.js",
   "scripts": {
     "test": "protractor protractor.conf.js",
-    "server": "webdriver-manager start",
-    "server-update": "webdriver-manager update"
+    "server-update": "webdriver-manager update",
+    "server": "webdriver-manager start"
   },
   "keywords": [
     "protractor",
-    "jasmine",
+    "jasmine2",
     "js"
   ],
   "author": "Artsem Dudar",
+  "dependencies": {
+    "jasmine-spec-reporter": "^4.0.0",
+    "jasmine2-custom-message": "^0.8.2",
+    "protractor": "^5.1.1",
+    "jasmine-core": "^2.6.0",
+    "selenium-webdriver": "^3.4.0"
+  },
   "devDependencies": {
     "@types/jasmine": "^2.5.47",
-    "@types/protractor": "^4.0.0",
-    "jasmine-spec-reporter": "^4.0.0",
-    "jasmine2-custom-message": "^0.8.2"
+    "@types/protractor": "^4.0.0"
   }
 }

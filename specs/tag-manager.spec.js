@@ -3,9 +3,8 @@
  */
 
 describe('scenario test', function () {
-    require('jasmine2-custom-message');
     var administrationPage = require('../pages/administration.page');
-    var loginPage = require('../pages/google.login.page');
+    var loginPage = require('../pages/login.page');
     var accountSettingsPage = require('../pages/account.settings.page');
     var containerSettingsPage = require('../pages/container.settings.page');
 
@@ -15,8 +14,8 @@ describe('scenario test', function () {
     });
 
     it('should enabled account name field', function () {
-        browser.ignoreSynchronization = false;
-        since('account name enabled').expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
+            browser.ignoreSynchronization = false;
+            since('account name enabled').expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
     });
 
     it('should set account name', function () {
@@ -26,9 +25,8 @@ describe('scenario test', function () {
     });
 
     it('should check checkbox "send anonymous data"', function () {
-        expect(accountSettingsPage.checkIsanonymousDataCheckboxSelected()).toBeFalsy();
         accountSettingsPage.clickAnonymousDataCheckbox();
-        expect(accountSettingsPage.checkIsanonymousDataCheckboxSelected()).toBeTruthy();
+        accountSettingsPage.expectAnonymousDataCheckboxSelected();
     });
 
     it('should display container name field', function () {
@@ -45,7 +43,7 @@ describe('scenario test', function () {
     it('should reset form', function () {
         administrationPage.clickCancel();
         expect(accountSettingsPage.getAccountNameText()).toEqual('');
-        expect(containerSettingsPage.checkIsAccountContainerIsDisplayed()).toBeFalsy();
+        expect(containerSettingsPage.checkIsAccountContainerDisplayed()).toBeFalsy();
     });
 
     afterEach(function () {

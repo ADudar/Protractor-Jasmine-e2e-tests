@@ -14,7 +14,7 @@ var ContainerSettings = function () {
         return accountContainerInput.isEnabled();
     };
 
-    this.checkIsAccountContainerIsDisplayed = function () {
+    this.checkIsAccountContainerDisplayed = function () {
         return accountContainerInput.isDisplayed();
     };
 
