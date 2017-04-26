@@ -15,7 +15,8 @@ describe('scenario test', function () {
 
     it('should enabled account name field', function () {
             browser.ignoreSynchronization = false;
-            since('account name enabled').expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
+            since('account name field is disabled')
+                .expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
     });
 
     it('should set account name', function () {
