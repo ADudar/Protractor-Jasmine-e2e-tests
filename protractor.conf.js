@@ -3,7 +3,7 @@ var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: ['./specs/tag-manager.spec.js'],
-    framework: 'jasmine',
+    framework: 'jasmine2',
     capabilities: {
         browserName: 'chrome'
     },
@@ -27,10 +27,9 @@ exports.config = {
                 displayDuration: true
             }
         }));
+        browser.ignoreSynchronization = true;
+        browser.driver.manage().timeouts().implicitlyWait(10000);
+        browser.driver.manage().window().maximize();
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     }
-    //   ,multiCapabilities: [{
-    //   browserName: 'firefox'
-    // }, {
-    //   browserName: 'chrome'
-    // }]
 };

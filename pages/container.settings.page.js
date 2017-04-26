@@ -4,10 +4,6 @@
 
 var ContainerSettings = function () {
 
-    // var websiteButton = element(by.css('div[title=Веб-сайт]'));
-    // var iosButton = element(by.css('div[title=iOS]'));
-    // var androidButton = element(by.css('div[title=Android]'));
-    // var ampButton = element(by.css('div[title=AMP]'));
     var accountContainerInput = element(by.model('form.container.data.name'));
 
     this.setAccountContainer = function (value) {

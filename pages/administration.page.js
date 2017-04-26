@@ -9,7 +9,6 @@ var AdministrationPage = function () {
 
     this.open = function () {
         browser.get('https://tagmanager.google.com/#/admin/accounts/create');
-        // browser.waitForAngular();
     };
 
     this.create = function () {

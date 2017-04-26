@@ -33,12 +33,8 @@ var AccountSettings = function () {
     };
 
     this.checkIsanonymousDataCheckboxSelected = function () {
-        var hasClass = function (element, cls) {
-            return element.getAttribute('class').then(function (classes) {
-                return classes.split(' ').indexOf(cls) !== -1;
-            });
-        };
-        return hasClass(anonymousDataCheckbox, 'material-checked')
+        return anonymousDataCheckbox.getAttribute('class')
+            .then(function (cls) { return  cls.indexOf('material-checked') !== -1})
     };
 
     this.clickNextStepButton = function () {

@@ -9,10 +9,14 @@ describe('scenario test', function () {
     var accountSettingsPage = require('../pages/account.settings.page');
     var containerSettingsPage = require('../pages/container.settings.page');
 
+    beforeAll(function () {
+        administrationPage.open();
+        loginPage.login('p1792127p1792127@gmail.com', 'testuser1p1792127');
+    });
 
     it('should enabled account name field', function () {
         browser.ignoreSynchronization = false;
-        expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
+        since('account name enabled').expect(accountSettingsPage.checkIsAccountNameEnabled()).toBeTruthy();
     });
 
     it('should set account name', function () {
@@ -43,17 +47,6 @@ describe('scenario test', function () {
         expect(accountSettingsPage.getAccountNameText()).toEqual('');
         expect(containerSettingsPage.checkIsAccountContainerIsDisplayed()).toBeFalsy();
     });
-
-    beforeAll(function () {
-        browser.ignoreSynchronization = true;
-        browser.driver.manage().timeouts().implicitlyWait(10000);
-        browser.driver.manage().window().maximize();
-        administrationPage.open();
-        loginPage.login('p1792127p1792127@gmail.com', 'testuser1p1792127');
-    });
-
-    // beforeEach( function() {
-    // });
 
     afterEach(function () {
         expect(administrationPage.checkIsCreateButtonEnabled()).toBeFalsy();
